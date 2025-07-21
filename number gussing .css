@@ -1,0 +1,113 @@
+body {
+    background-image: url("image/image1.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-size: x-large;
+    cursor: initial;
+    margin: 20px;
+}
+
+.title {
+    color: #00ffff;
+    font-size: 150%;
+    padding-right: 85px;
+}
+
+input {
+    width: 30%;
+    height: 50px;
+    border-color: black;
+    border-width: 5px;
+    border-style: double;
+    font-size: large;
+}
+
+button {
+    width: 10%;
+    height: 50px;
+    color: black;
+    font-size: 20px;
+
+}
+
+button:hover {
+    background-color: dimgrey;
+}
+
+#resultcase {
+    color: #39ff14;
+    font-size: 200%;
+    padding-bottom: 20px;
+}
+
+#correctanswer {
+    color: #C0C0C0;
+    font-size: 225%;
+    padding-bottom: 25px;
+}
+
+.scores {
+    color: tomato;
+    padding-top: 50px;
+    font-size: 205%;
+}
+
+
+.rules {
+    text-align: left;
+    margin-left: 225px;
+    color: #FFD700;
+    font-size: 200%;
+}
+
+.paras {
+    text-align: left;
+    padding-left: 350px;
+    font-size: xx-large;
+
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: large;
+        text-align: center;
+
+    }
+
+    input {
+        width: 90%;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    button {
+        width: 50%;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .title h1 {
+        font-size: 24px;
+    }
+
+    .scores h3,
+    .rules h3 {
+        font-size: 20px;
+    }
+
+    .paras {
+        padding-left: 10px;
+        font-size: large;
+        text-align: left;
+    }
+
+    #resultcase {
+        font-size: 24px;
+    }
+
+    #playAgain {
+        width: 50%;
+    }
+}

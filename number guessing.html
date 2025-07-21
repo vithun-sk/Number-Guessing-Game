@@ -1,0 +1,94 @@
+<head>
+    <title>Number Guessing</title>
+    <link rel="stylesheet" href="number gussing .css">
+</head>
+
+<body>
+    <center>
+        <div class="title">
+            <h1>Guess the Number from 1 to 10</h1>
+        </div><br>
+
+        <div class="input">
+            <input id="num" type="number" placeholder="Enter any Number"><br><br>
+        </div>
+        <div class="button">
+            <button onclick="result()">check</button>
+        </div>
+
+        <p id="resultcase">Result will diplay here</p>
+        <p id="correctanswer"></p>
+
+        <div class="scores">
+            <h3 id="Totalscore">Your Score :0/8</h3>
+            <button id="playAgain" style="display: none;" onclick="resetGame()">Play Again 🔄</button>
+
+        </div>
+        <div class="rules">
+            <h3>Rules :</h3>
+        </div>
+        <div class="paras">
+            <p>1) First you need to enter a number from 1 to 10<br>
+                2) Then click check button <br>
+                3) Initially you have 20 chances<br>
+                4) If your guess is correct you will gain 1 point.<br>
+                5) If your guess is wrong you won't get points <br>
+                6) Within this 20 chances you need to guess the number 8 times correctly<br>
+                7) If you the number 8 times correctly you will Win Otherwise You will Lose </p>
+        </div>
+    </center>
+    <script>
+        var a = document.getElementById("num")
+        var ans = document.getElementById("resultcase")
+        var score = document.getElementById("Totalscore")
+        var score = 0
+        var attempt = 0
+
+
+
+        function result() {
+            var b = Math.floor(Math.random() * 10) + 1
+            var inputnumber = Number(a.value)
+            console.log(b)
+            if (attempt < 20) {
+                attempt = attempt + 1
+                if (inputnumber == b) {
+                    if (score < 8) {
+                        ans.textContent = "Your Guess is Correct 🙂 "
+                        score = score + 1
+                        Totalscore.textContent = "Your Score :" + score + "/8"
+                    }
+                    if (score == 8) {
+                        resultcase.textContent = "Congrats!! You have Won the Game.. 🎉🎉"
+                    }
+                }
+                else {
+                    ans.textContent = "Your Guess is Wrong 🙁"
+                    correctanswer.textContent = " Correct Number is " + b
+
+                }
+            }
+            if (attempt >= 20) {
+                resultcase.textContent = "Game Over 🎮"
+                Totalscore.textContent = "Oops!! You have Lose the Game .. 😢"
+                document.getElementById("playAgain").style.display = "block";
+
+            }
+
+
+
+        }
+        function resetGame() {
+            score = 0;
+            attempt = 0;
+            ans.textContent = "Result will display here";
+            correctanswer.textContent = "";
+            Totalscore.textContent = "Your Score : 0/8";
+            a.value = ""; // Clear input field
+            document.getElementById("playAgain").style.display = "none"; // Hide Play Again button
+        }
+
+
+    </script>
+
+</body>
